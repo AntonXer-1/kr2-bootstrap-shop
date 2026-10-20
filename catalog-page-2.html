@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Учебный интернет-магазин. Контрольная работа №2 на Bootstrap.">
+  <title>Каталог — страница 2 — Учебный магазин</title>
+  <!-- Сначала библиотека, затем небольшие собственные стили. CDN не используется. -->
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/custom.css?v=20261020">
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="js/demo.js" defer></script>
+</head>
+<body id="top">
+  <a class="visually-hidden-focusable" href="#main">Перейти к содержимому</a>
+  <header class="sticky-top bg-light border-bottom">
+    <nav class="navbar navbar-expand-lg" aria-label="Основная навигация">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Учебный магазин</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#shop-nav" aria-controls="shop-nav" aria-expanded="false" aria-label="Открыть меню"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="shop-nav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="catalog.html">Каталог</a></li>
+            <li class="nav-item"><a class="nav-link" href="product.html">Товар</a></li>
+            <li class="nav-item"><a class="nav-link" href="order.html">Заявка</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main class="container py-4" id="main">
+    <h1>Каталог товаров</h1>
+    <p class="text-body-secondary">Показаны товары 4–6 из 6. Все характеристики учебные.</p>
+    <div class="row g-4">
+<div class="col-12 col-md-6 col-lg-4">
+        <article class="card h-100">
+          <div class="card-body d-flex flex-column">
+            <p><span class="badge text-bg-secondary">Учебный товар</span></p>
+            <h2 class="card-title h5">Веб-камера View</h2>
+            <p class="card-text">Камера для учебных видеозвонков.</p>
+            <p class="text-body-secondary small">1920 × 1080, USB, крепление на монитор.</p>
+            <p class="fw-bold">2 990 ₽</p>
+            <div class="d-flex flex-wrap gap-2 mt-auto"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#orderModal" data-product="Веб-камера View" aria-label="Заказать Веб-камера View">Заказать</button></div>
+          </div>
+        </article>
+      </div>
+<div class="col-12 col-md-6 col-lg-4">
+        <article class="card h-100">
+          <div class="card-body d-flex flex-column">
+            <p><span class="badge text-bg-secondary">Учебный товар</span></p>
+            <h2 class="card-title h5">USB-концентратор Hub</h2>
+            <p class="card-text">Дополнительные разъёмы для ноутбука.</p>
+            <p class="text-body-secondary small">Четыре USB-порта.</p>
+            <p class="fw-bold">1 790 ₽</p>
+            <div class="d-flex flex-wrap gap-2 mt-auto"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#orderModal" data-product="USB-концентратор Hub" aria-label="Заказать USB-концентратор Hub">Заказать</button></div>
+          </div>
+        </article>
+      </div>
+<div class="col-12 col-md-6 col-lg-4">
+        <article class="card h-100">
+          <div class="card-body d-flex flex-column">
+            <p><span class="badge text-bg-secondary">Учебный товар</span></p>
+            <h2 class="card-title h5">Коврик Desk</h2>
+            <p class="card-text">Большой коврик для рабочего стола.</p>
+            <p class="text-body-secondary small">800 × 300 мм, ткань, нескользящая основа.</p>
+            <p class="fw-bold">990 ₽</p>
+            <div class="d-flex flex-wrap gap-2 mt-auto"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#orderModal" data-product="Коврик Desk" aria-label="Заказать Коврик Desk">Заказать</button></div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <nav class="mt-4" aria-label="Страницы каталога">
+      <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="catalog.html" aria-label="Страница 1">1</a></li>
+        <li class="page-item active"><span class="page-link" aria-current="page" aria-label="Страница 2">2</span></li>
+      </ul>
+    </nav>
+  </main>
+  <footer class="bg-light border-top py-3">
+    <div class="container"><p class="mb-1">Чернышев Антон Дмитриевич · ЭФБО-02-25 · КР №2</p><p class="small text-body-secondary mb-0">Учебный проект. Цены и характеристики условные, формы ничего не отправляют.</p></div>
+  </footer>
+  <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="orderModalLabel">Учебная заявка</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <p>Выбран товар: <strong id="selected-product">Клавиатура Quiet</strong></p>
+          <p class="mb-0">Это демонстрация интерфейса. Заявки не отправляются, продажи не осуществляются.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+          <a class="btn btn-primary" id="order-link" href="order.html">Перейти к форме</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

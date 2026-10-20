@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Учебный интернет-магазин. Контрольная работа №2 на Bootstrap.">
+  <title>Учебная заявка — Учебный магазин</title>
+  <!-- Сначала библиотека, затем небольшие собственные стили. CDN не используется. -->
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/custom.css?v=20261020">
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="js/demo.js" defer></script>
+</head>
+<body id="top">
+  <a class="visually-hidden-focusable" href="#main">Перейти к содержимому</a>
+  <header class="sticky-top bg-light border-bottom">
+    <nav class="navbar navbar-expand-lg" aria-label="Основная навигация">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Учебный магазин</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#shop-nav" aria-controls="shop-nav" aria-expanded="false" aria-label="Открыть меню"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="shop-nav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+            <li class="nav-item"><a class="nav-link" href="catalog.html">Каталог</a></li>
+            <li class="nav-item"><a class="nav-link" href="product.html">Товар</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="order.html">Заявка</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main class="container py-4" id="main">
+    <h1>Учебная заявка</h1>
+    <div class="alert alert-info" id="form-note">Форма демонстрационная. Данные не отправляются и не сохраняются. Используйте вымышленные данные.</div>
+    <noscript><p class="alert alert-warning">Для проверки учебной заявки включите JavaScript. Отправка отключена.</p></noscript>
+    <form id="order-form" aria-describedby="form-note" method="post">
+      <div class="row g-3">
+        <div class="col-12 col-md-6">
+          <label class="form-label" for="customer-name">Имя *</label>
+          <input class="form-control" id="customer-name" name="name" type="text" minlength="2" maxlength="80" autocomplete="given-name" required>
+        </div>
+        <div class="col-12 col-md-6">
+          <label class="form-label" for="customer-email">E-mail *</label>
+          <input class="form-control" id="customer-email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="col-12 col-md-6">
+          <label class="form-label" for="customer-phone">Телефон *</label>
+          <div class="input-group">
+            <span class="input-group-text" id="phone-prefix">+7</span>
+            <input class="form-control" id="customer-phone" name="phone" type="tel" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" autocomplete="tel-national" aria-describedby="phone-prefix phone-hint" required>
+          </div>
+          <div class="form-text" id="phone-hint">Введите 10 цифр без +7, например 9001234567.</div>
+        </div>
+        <div class="col-12 col-md-6">
+          <label class="form-label" for="product">Товар *</label>
+          <select class="form-select" id="product" name="product" required>
+            <option value="">Выберите товар</option>
+            <option value="Клавиатура Quiet">Клавиатура Quiet</option>
+            <option value="Мышь Motion">Мышь Motion</option>
+            <option value="Наушники Focus">Наушники Focus</option>
+            <option value="Веб-камера View">Веб-камера View</option>
+            <option value="USB-концентратор Hub">USB-концентратор Hub</option>
+            <option value="Коврик Desk">Коврик Desk</option>
+          </select>
+        </div>
+        <div class="col-12">
+          <label class="form-label" for="comment">Комментарий</label>
+          <textarea class="form-control" id="comment" name="comment" rows="3" maxlength="1000"></textarea>
+        </div>
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" id="consent" name="consent" type="checkbox" value="yes" required>
+            <label class="form-check-label" for="consent">Согласен с условиями учебной проверки данных *</label>
+          </div>
+        </div>
+        <div class="col-12"><p class="small text-body-secondary">* Обязательные поля.</p><button class="btn btn-primary" type="submit" disabled>Проверить заявку</button></div>
+      </div>
+    </form>
+    <div class="alert alert-success mt-3" id="form-result" role="status" tabindex="-1" hidden>Учебная заявка проверена. Данные не отправлены и не сохранены.</div>
+  </main>
+  <footer class="bg-light border-top py-3">
+    <div class="container"><p class="mb-1">Чернышев Антон Дмитриевич · ЭФБО-02-25 · КР №2</p><p class="small text-body-secondary mb-0">Учебный проект. Цены и характеристики условные, формы ничего не отправляют.</p></div>
+  </footer>
+  <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="orderModalLabel">Учебная заявка</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <p>Выбран товар: <strong id="selected-product">Клавиатура Quiet</strong></p>
+          <p class="mb-0">Это демонстрация интерфейса. Заявки не отправляются, продажи не осуществляются.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+          <a class="btn btn-primary" id="order-link" href="order.html">Перейти к форме</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

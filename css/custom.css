@@ -1,0 +1,25 @@
+/* Только небольшие дополнения к Bootstrap, не своя замена фреймворка. */
+body {
+  font-family: Arial, sans-serif;
+}
+
+main {
+  min-height: 75vh;
+}
+
+.hero {
+  background: #eef4ff;
+}
+
+.navbar-brand {
+  font-size: 1.1rem;
+}
+
+.card-title {
+  line-height: 1.4;
+}
+
+/* Закрепление обеспечивает Bootstrap sticky-top, этот отступ нужен для якорей. */
+html {
+  scroll-padding-top: 5rem;
+}
