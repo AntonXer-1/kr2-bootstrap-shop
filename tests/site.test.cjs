@@ -107,6 +107,7 @@ test('form validates email and consent, shows demo result and never sends data',
   const page = await browser.newPage(); const sent = [];
   page.on('request', req => { if (req.method() !== 'GET') sent.push(req.url()); });
   await page.goto(base + 'order.html?product=UNKNOWN');
+  assert.equal(await page.getByRole('checkbox', { name: /Согласен на учебную обработку/ }).count(), 1, 'consent must explain data processing');
   assert.equal(await page.locator('[name=product]').inputValue(), '');
   await page.locator('[name=name]').fill('Антон');
   await page.locator('[name=email]').fill('wrong');
