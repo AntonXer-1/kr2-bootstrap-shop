@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 320" width="640" height="320">
+  <title>Условная клавиатура Quiet сбоку</title>
+  <rect width="640" height="320" fill="#f8f9fa"/>
+  <path d="M80 195 L550 155 L560 200 L80 225Z" fill="#adb5bd" stroke="#495057" stroke-width="3"/>
+  <path d="M105 190 L105 175 L140 172 L140 187 M160 185 L160 170 L195 167 L195 182 M215 180 L215 165 L250 162 L250 177 M270 175 L270 160 L305 157 L305 172 M325 170 L325 155 L360 152 L360 167 M380 165 L380 150 L415 147 L415 162 M435 160 L435 145 L470 142 L470 157 M490 155 L490 140 L525 137 L525 152" fill="#fff" stroke="#6c757d" stroke-width="2"/>
+  <path d="M550 175 L590 170 L610 125" fill="none" stroke="#495057" stroke-width="4"/>
+</svg>
